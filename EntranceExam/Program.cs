@@ -41,13 +41,64 @@ namespace EntranceExam
             //Console.WriteLine(pr.nUnique(randomArray, variab));
             //Console.WriteLine(pr.isSquare(0));
             //Console.WriteLine(pr.EvenMinusOdd(randomArray));
-           // Console.WriteLine(pr.Intersection(first,second));
-           // pr.isLegalNumbers(first, randomNumber);
-           // Console.WriteLine(pr.ComputeDepth(42));
+            // Console.WriteLine(pr.Intersection(first,second));
+            // pr.isLegalNumbers(first, randomNumber);
+            // Console.WriteLine(pr.findPorcupineNumber(103));
+            Square s = new Square();
+            int[] array = { 9, 0, 2, -5, 7 };
+            Console.WriteLine(s.countofSquarePair(array));
            
         }
 
-
+        int isDivisionCounter(int n)
+        {
+            int count = 0;
+            int mid = n / 2;
+            for (int i = 1; i < mid; i++)
+            {
+                if(n%i == 0)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+        int findPorcupineNumber(int n)
+        {
+            int thenextPrime = 0;
+            int thePorcupineNumber = 0;
+            bool porcupine = false;
+            int max = int.MaxValue;
+                 n++;
+                while (n<=max) {
+                    if(porcupine)
+                    {
+                            if(n% 10 == 9 && isDivisionCounter(n)==1)
+                            {
+                                porcupine = true;
+                                break;
+                            }
+                            else
+                            {
+                                porcupine = false;
+                            }
+                        
+                    }
+                else
+                {
+                    if ((isDivisionCounter(n) == 1) && (n % 10 == 9))
+                    {
+                        porcupine = true;
+                        thePorcupineNumber = n;
+                    }
+          
+                }
+                n++;   
+                }
+                
+            
+            return n;
+        }
 
      
       
