@@ -45,11 +45,102 @@ namespace EntranceExam
             // pr.isLegalNumbers(first, randomNumber);
             // Console.WriteLine(pr.findPorcupineNumber(103));
             Square s = new Square();
-            int[] array = { 9, 0, 2, -5, 7 };
-            Console.WriteLine(s.countofSquarePair(array));
-           
+            int[] array = { 1, 1, 15 - 1, -1 };
+            //Console.WriteLine(s.countofSquarePair(array));
+            //pr.countofSquarePair(array);
+            //Console.WriteLine(pr.guthrieIndex(42));
+             Console.WriteLine(pr.SolveTen);
+
+           // Console.WriteLine(pr.isCenteredFifteen(array));
+        }
+        int isCenteredFifteen(int[] array)
+        {
+            int n = 0, sum = 0;
+            for (int i = 0; i < array.Length ; i++)
+            {
+                for (int k = 0; k < array.Length; k++)
+                {
+                    sum += array[k];
+                    if(sum == 15)
+                    {
+                        int before = i;
+                        int after = array.Length - k-1;
+                        if(before == after)
+                        {
+                            Console.WriteLine("After : " + after + " Elements before center fifteen :" + before);
+                            Console.WriteLine("Sum : " + sum);
+                            n = 1;
+                        }
+                       
+                    }
+                }
+                sum = 0;
+            }
+            return n;
         }
 
+
+        int guthrieIndex(uint n)
+        {
+            int count = 0;
+            if (n == 1) return 1;
+            if (n > 1)
+            {
+                do
+                {
+                    if (n % 2 == 0)
+                    {
+                        n /= 2;
+                        count++;
+                    }
+                    else
+                    {
+                        n = n * 3 + 1;
+                        count++;
+                    }
+                } while (n != 1);
+            }
+            return count;
+        }
+        int sumFactor(int[] array)
+        {
+            int sum = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                sum += array[i];
+            }
+            var value = array.Where(x => x == sum).ToList().Count;
+            return value;
+        }
+         void countofSquarePair(int[] arr)
+        {
+            int count = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] < 0) continue;
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                   
+                    if (isPerfectSquare((arr[i] + arr[j])) == 1 && arr[i]>0 && arr[j]>0)
+                    {
+                        count++;
+                        Console.WriteLine(arr[i]+","+ arr[j]);
+                    }
+                }
+
+            }
+            Console.WriteLine(count);
+        }
+        int isPerfectSquare(int n)
+        {
+            double root = Math.Sqrt(n);
+            if (n ==(int)root*(int)root)
+            {
+                return 1;
+            }
+            return 0;
+        }
         int isDivisionCounter(int n)
         {
             int count = 0;

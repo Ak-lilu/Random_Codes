@@ -41,12 +41,12 @@ namespace EntranceExam
          public  int countofSquarePair(int[] arr)
         {
             int count = 0;
-            //int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 };
+
             for (int i = 0; i < arr.Length; i++)
             {
                 for (int j = i+1; j < arr.Length; j++)
                 {
-                    if (arr[j] <= 0) continue;
+                    if (arr[j] <= 0 && arr[i]<=0) continue;
                     if (isPerfectSquare(arr[i]+arr[j]) == 1)
                     {
                         count++;
