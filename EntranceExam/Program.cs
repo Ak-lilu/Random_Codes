@@ -26,9 +26,6 @@ namespace EntranceExam
 
             //Madhav md = new Madhav();
 
-
-
-
             //Console.WriteLine(pr.f(first,second));
             // Console.WriteLine(Math.Sqrt(randomNumber));
             // Console.WriteLine(pr.isPerfectSquare(randomNumber));
@@ -45,14 +42,18 @@ namespace EntranceExam
             // pr.isLegalNumbers(first, randomNumber);
             // Console.WriteLine(pr.findPorcupineNumber(103));
             Square s = new Square();
-            int[] array = { 1, 1, 15 - 1, -1 };
-            //Console.WriteLine(s.countofSquarePair(array));
+            int[] array = { };
+            // Console.WriteLine(s.countofSquarePair(array));
             //pr.countofSquarePair(array);
             //Console.WriteLine(pr.guthrieIndex(42));
-             Console.WriteLine(pr.SolveTen);
-
-           // Console.WriteLine(pr.isCenteredFifteen(array));
+            //Console.WriteLine(pr.SolveTen());
+            Henry HH = new Henry();
+            int divisor = 12;
+            // Console.WriteLine(s.isDivisible(array, divisor));
+            // Console.WriteLine(string.Join(",",HH.perfectNumber(1,3)));
+           // Console.WriteLine(pr.isStackedNumber(11));
         }
+       
         int isCenteredFifteen(int[] array)
         {
             int n = 0, sum = 0;
@@ -80,28 +81,7 @@ namespace EntranceExam
         }
 
 
-        int guthrieIndex(uint n)
-        {
-            int count = 0;
-            if (n == 1) return 1;
-            if (n > 1)
-            {
-                do
-                {
-                    if (n % 2 == 0)
-                    {
-                        n /= 2;
-                        count++;
-                    }
-                    else
-                    {
-                        n = n * 3 + 1;
-                        count++;
-                    }
-                } while (n != 1);
-            }
-            return count;
-        }
+  
         int sumFactor(int[] array)
         {
             int sum = 0;
@@ -141,57 +121,7 @@ namespace EntranceExam
             }
             return 0;
         }
-        int isDivisionCounter(int n)
-        {
-            int count = 0;
-            int mid = n / 2;
-            for (int i = 1; i < mid; i++)
-            {
-                if(n%i == 0)
-                {
-                    count++;
-                }
-            }
-            return count;
-        }
-        int findPorcupineNumber(int n)
-        {
-            int thenextPrime = 0;
-            int thePorcupineNumber = 0;
-            bool porcupine = false;
-            int max = int.MaxValue;
-                 n++;
-                while (n<=max) {
-                    if(porcupine)
-                    {
-                            if(n% 10 == 9 && isDivisionCounter(n)==1)
-                            {
-                                porcupine = true;
-                                break;
-                            }
-                            else
-                            {
-                                porcupine = false;
-                            }
-                        
-                    }
-                else
-                {
-                    if ((isDivisionCounter(n) == 1) && (n % 10 == 9))
-                    {
-                        porcupine = true;
-                        thePorcupineNumber = n;
-                    }
-          
-                }
-                n++;   
-                }
-                
-            
-            return n;
-        }
-
-     
+        
       
    
         int mad(int[] a)

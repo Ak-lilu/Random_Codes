@@ -56,7 +56,7 @@ namespace EntranceExam
             }
             return count;
         }
-        int isPerfectSquare(int n)
+        public int isPerfectSquare(int n)
         {
             double root = Math.Sqrt(n);
             if(n == Math.Pow(root, 2))
@@ -65,19 +65,19 @@ namespace EntranceExam
             }
             return 0;
         }
-            //;
-            //
-            //var newDictionary = new Dictionary<int, int>();
-            //for (int i = 0; i < arr.Length; i++)
-            //{
-            //    if (arr[i] % 2 == 0)
-            //    {
-            //        newDictionary.Add( arr[i], arr[i + 1] );
-            //    }
-            //}
-            //var lists = newDictionary.Select(p => new Dictionary<int, int>() { { p.Key, p.Value } });
+                public int isDivisible(int[] array, int divisor)
+                {
+                    int value = 1;
+                        for (int i = 0; i < array.Length; i++)
+                        {
+                            if(array[i]%divisor != 0)
+                            {
+                                 return 0;
+                            }
 
-            //return lists.ToList();
+                        }
+                    return value;
+                }
         }
     }
 
