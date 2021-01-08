@@ -42,7 +42,7 @@ namespace EntranceExam
             // pr.isLegalNumbers(first, randomNumber);
             // Console.WriteLine(pr.findPorcupineNumber(103));
             Square s = new Square();
-            int[] array = { };
+            int[] array = {};
             // Console.WriteLine(s.countofSquarePair(array));
             //pr.countofSquarePair(array);
             //Console.WriteLine(pr.guthrieIndex(42));
@@ -51,9 +51,65 @@ namespace EntranceExam
             int divisor = 12;
             // Console.WriteLine(s.isDivisible(array, divisor));
             // Console.WriteLine(string.Join(",",HH.perfectNumber(1,3)));
-           // Console.WriteLine(pr.isStackedNumber(11));
+            // Console.WriteLine(pr.isStackedNumber(11));
+            int st = 0;
+            int len = 3;
+            char[] chara = {'a', 'b', 'c'};
+            Non_Zero nz = new Non_Zero();
+            PatternMatch pm = new PatternMatch();
+            Console.WriteLine(nz.hasZeroes(array));
+            Console.WriteLine(pr.ComputeDepth(25));
+            int[] A = { 1, 2, 3, -5, -5, 2, 3, 18};
+            int[] P = { 3, -2, 3 };
+            Console.WriteLine(pm.Pattern(A,P));
+           // WeirdTrees();
         }
        
+        static void WeirdTrees()
+        {
+            for (int a =7; a>0; a--)
+            {
+                for (int i = a; i < 7; i++)
+                {
+                    Console.Write(" ");
+                }
+                for (int i = 7; i > a; i--)
+                {
+                    Console.Write("   ");
+                    //for (int d = 0; d < a; d++)
+                    //{
+                    //    Console.Write("* ");
+                    //}
+                 //  Console.WriteLine("*");
+                }
+                for (int i = 7; i > a; i--)
+                {
+                    Console.Write("0");
+                }
+                Console.WriteLine(" ");
+            }
+        }
+        int reverseAnIntArray(int num)
+        {
+            int reverse = 0;
+            while(num != 0)
+            {
+                int remainder = num % 10;
+                reverse = reverse * 10 + remainder;
+                num = num / 10;
+            }
+            return reverse;
+        }
+        char[] PartOfanArray(char[] a, int start, int len)
+        {
+            List<char> part = new List<char>();
+            if (start < 0 || len > a.Length) return null;
+            for (int i = start; i < len; i++)
+            {
+                part.Add(a[i]);
+            }
+            return part.ToArray();
+        }
         int isCenteredFifteen(int[] array)
         {
             int n = 0, sum = 0;
@@ -122,7 +178,28 @@ namespace EntranceExam
             return 0;
         }
         
-      
+        int ComputeDepth(int n)
+        {
+            List<char> arr = new List<char>();
+            int depth = 0;
+            int multiplier = 1;
+            while (arr.Count < 10)
+            {
+                int result = n * multiplier;
+                var tocharacters = result.ToString().ToCharArray();
+                foreach (var item in tocharacters)
+                {
+                    if (!arr.Contains(item))
+                    {
+                        arr.Add(item);
+                        
+                    }
+                }
+                depth++;
+                multiplier++;
+            }
+            return depth;
+        }
    
         int mad(int[] a)
         {
