@@ -18,6 +18,42 @@ namespace EntranceExam
             }
             return Square;
         }
+            public int isVanilla(int[] a)
+            {
+            int temp = 0;
+            int firstdigit = a[0] % 10;
+            int currentElement = 0;
+            for (int i = 0; i < a.Length; i++)
+            {
+                currentElement = a[i];
+                while(currentElement != 0)
+                {
+                    temp = currentElement % 10;
+                    if(Math.Abs(firstdigit) != Math.Abs(temp))
+                    {
+                        return 0;
+                    }
+                    currentElement = currentElement / 10;
+                }
+            }
+            return 1;
+            }
+        public int isTrivalent(int[] array)
+        {
+            List<int> unique = new List<int>();
+            for (int d = 0; d < array.Length; d++)
+            {
+                if (!unique.Contains(array[d]))
+                {
+                    unique.Add(array[d]);
+                }
+            }
+            if(unique.Count == 3)
+            {
+                return 1;
+            }
+            return 0;
+        }
         int squarePair(int[] aaa)
         {
             int[] array = { 9, 0, 2, -5, 7 };

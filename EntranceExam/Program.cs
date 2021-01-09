@@ -52,19 +52,66 @@ namespace EntranceExam
             // Console.WriteLine(s.isDivisible(array, divisor));
             // Console.WriteLine(string.Join(",",HH.perfectNumber(1,3)));
             // Console.WriteLine(pr.isStackedNumber(11));
-            int st = 0;
-            int len = 3;
-            char[] chara = {'a', 'b', 'c'};
-            Non_Zero nz = new Non_Zero();
-            PatternMatch pm = new PatternMatch();
-            Console.WriteLine(nz.hasZeroes(array));
-            Console.WriteLine(pr.ComputeDepth(25));
-            int[] A = { 1, 2, 3, -5, -5, 2, 3, 18};
-            int[] P = { 3, -2, 3 };
-            Console.WriteLine(pm.Pattern(A,P));
-           // WeirdTrees();
+            //int st = 0;
+            //int len = 3;
+            //char[] chara = {'a', 'b', 'c'};
+            //Non_Zero nz = new Non_Zero();
+            //PatternMatch pm = new PatternMatch();
+            //Console.WriteLine(nz.hasZeroes(array));
+            //Console.WriteLine(pr.ComputeDepth(25));
+            //int[] A = { 1, 2, 3, -5, -5, 2, 3, 18};
+            //int[] P = { 3, -2, 3 };
+            //Console.WriteLine(pm.Pattern(A,P));
+            int[] ranArr = { 2147483647, -1, -1,-2147483648};
+            SumSafe ss = new SumSafe();
+            Square sm = new Square();
+           // Console.WriteLine(sm.isTrivalent(ranArr));
+            //Console.WriteLine(ss.issumSafe(ranArr));
+
+            // Console.WriteLine(pr.isolated(2097151));
+            Console.WriteLine(pr.countRepresentations(15));
         }
-       
+ 
+            public int countRepresentations(int numRupees)
+            {
+                int count = 0;
+                for (int rupee20 = 0; rupee20 <= (numRupees) / 20; rupee20++)
+                {
+                    for (int rupee10 = 0; rupee10 <= (numRupees - (rupee20 * 20)) / 10; rupee10++)
+                    {
+                        for (int rupee5 = 0; rupee5 <= (numRupees - (rupee10 * 10 + rupee20 * 20)) / 5; rupee5++)
+                        {
+                            for (int rupee2 = 0; rupee2 <= (numRupees - (rupee5 * 5 + rupee10 * 10 + rupee20 * 20)) / 2; rupee2++)
+                            {
+                                for (int rupee1 = 0; rupee1 <= numRupees - (rupee2 * 2 + rupee5 * 5 + rupee10 * 10 + rupee20 * 20); rupee1++)
+                                {
+                                    if ((rupee1 + rupee2 * 2 + rupee5 * 5 + rupee10 * 10 + rupee20 * 20) == numRupees)
+                                    {
+                                        count++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                return count;
+            }
+
+        public int isolated(long n)
+        {
+            //int inter = 0;
+            var square = n*n;
+            var cube = n * n * n;
+            var squar = square.ToString().ToCharArray();
+            var cub = cube.ToString().ToCharArray();
+            // if (n >= 2097151) return -1;
+            Console.WriteLine(cub);
+            if (squar.Where(x=> cub.Contains(x)).Count() == 0)
+            {
+                return 1;
+            }
+            return 0; 
+        }
         static void WeirdTrees()
         {
             for (int a =7; a>0; a--)
