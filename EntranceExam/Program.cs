@@ -42,7 +42,7 @@ namespace EntranceExam
             // pr.isLegalNumbers(first, randomNumber);
             // Console.WriteLine(pr.findPorcupineNumber(103));
             Square s = new Square();
-            int[] array = {};
+            int[] arraya = {};
             // Console.WriteLine(s.countofSquarePair(array));
             //pr.countofSquarePair(array);
             //Console.WriteLine(pr.guthrieIndex(42));
@@ -62,24 +62,58 @@ namespace EntranceExam
             //int[] A = { 1, 2, 3, -5, -5, 2, 3, 18};
             //int[] P = { 3, -2, 3 };
             //Console.WriteLine(pm.Pattern(A,P));
-            int[] ranArr = { 2147483647, -1, -1,-2147483648};
+           
             SumSafe ss = new SumSafe();
             Square sm = new Square();
-           // Console.WriteLine(sm.isTrivalent(ranArr));
+            // Console.WriteLine(sm.isTrivalent(ranArr));
             //Console.WriteLine(ss.issumSafe(ranArr));
 
             // Console.WriteLine(pr.isolated(2097151));
-            Console.WriteLine(pr.countRepresentations(15));
+
+            int[] array = { 1};
+            MinMax mm = new MinMax();
+            Multiple ml = new Multiple();
+            //Console.WriteLine(ml.smallest(7));
+            Cluster cl = new Cluster();
+            //Console.WriteLine(string.Join(",",cl.ClusterCompression(ranArr)));
+            Railroad rr = new Railroad();
+            FullnessQuotient full = new FullnessQuotient();
+            //Console.WriteLine(rr.isRailroadTie(ranArr));
+            // Console.WriteLine(full.isPacked(ranArr));
+            // Console.WriteLine(mm.isMinMaxDisjoint(array));
+            // Console.WriteLine(pr.countRepresentations(15));
+            //SequenciallyBounded bounded = new SequenciallyBounded();
+            //Console.WriteLine(bounded.isSequentiallyBounded(array));
+            int[] ranArr = { 0, 0, 0, 0, 0 };
+            //Console.WriteLine(rr.railroadtie(ranArr));
+            BEQ_number bn = new BEQ_number();
+            Console.WriteLine(bn.zerLimited(ranArr));
         }
- 
-            public int countRepresentations(int numRupees)
+        static int distributeCandy(int[] score)
+        {
+            int m = score.Length;
+            int[] left = new int[m];
+            int[] right = new int[m];
+            int candies = 0;
+            left[0] = 1;
+            for (int i = 1; i < m; i++)
+                left[i] = score[i] > score[i - 1] ? left[i - 1] + 1 : 1;
+            right[m - 1] = 1;
+            for (int i = m - 2; i >= 0; i--)
+                right[i] = score[i] > score[i + 1] ? right[i + 1] + 1 : 1;
+            for (int i = 0; i < m; i++)
+                candies += Math.Max(left[i], right[i]);
+            return candies;
+        }
+        public int countRepresentations(int numRupees)
             {
                 int count = 0;
                 for (int rupee20 = 0; rupee20 <= (numRupees) / 20; rupee20++)
                 {
                     for (int rupee10 = 0; rupee10 <= (numRupees - (rupee20 * 20)) / 10; rupee10++)
-                    {
-                        for (int rupee5 = 0; rupee5 <= (numRupees - (rupee10 * 10 + rupee20 * 20)) / 5; rupee5++)
+                {
+                    Console.WriteLine("rupee 1 2 5 10 20 : "  + rupee10 + " | " + rupee20);
+                    for (int rupee5 = 0; rupee5 <= (numRupees - (rupee10 * 10 + rupee20 * 20)) / 5; rupee5++)
                         {
                             for (int rupee2 = 0; rupee2 <= (numRupees - (rupee5 * 5 + rupee10 * 10 + rupee20 * 20)) / 2; rupee2++)
                             {
@@ -88,7 +122,9 @@ namespace EntranceExam
                                     if ((rupee1 + rupee2 * 2 + rupee5 * 5 + rupee10 * 10 + rupee20 * 20) == numRupees)
                                     {
                                         count++;
+                                  //  Console.WriteLine("rupee 1 2 5 10 20 : "+rupee1+" | "+rupee2+"  "+rupee5 + " | "+rupee10+" | "+rupee20);
                                     }
+                              //  Console.WriteLine();
                                 }
                             }
                         }
