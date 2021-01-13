@@ -84,10 +84,10 @@ namespace EntranceExam
             // Console.WriteLine(pr.countRepresentations(15));
             //SequenciallyBounded bounded = new SequenciallyBounded();
             //Console.WriteLine(bounded.isSequentiallyBounded(array));
-            int[] ranArr = { 0, 0, 0, 0, 0 };
+            int[] ranArr = { 2, 2, 2, 4, 4 };
             //Console.WriteLine(rr.railroadtie(ranArr));
             BEQ_number bn = new BEQ_number();
-            Console.WriteLine(bn.zerLimited(ranArr));
+            Console.WriteLine(bn.isNormal(9));
         }
         static int distributeCandy(int[] score)
         {
