@@ -1,15 +1,41 @@
-﻿using System;
+﻿
+
+using System;
 using System.Collections.Generic;
 
 namespace EntranceExam
 {
     partial class Program
     {
-        class PrimeNumbers
+       public class PrimeNumbers
         {
-            private List<int> FindFactors(int thevalue)
+            //spoj prime generator
+            //accept range
+            public static void primeGenerator()
             {
-                int mid = thevalue / 2;
+                // List<int> list = new List<int>();
+                int times = int.Parse(Console.ReadLine());
+               
+                while (times != 0) {
+                    //Console.WriteLine("Enter ..");
+                    string input = Console.ReadLine();
+                    string[] array = input.Split(' ');
+                    int start = int.Parse(array[0]);
+                    int end = int.Parse(array[1]);
+                    for (int i = start; i <= end; i++)
+                        {
+                            if (FindFactors(i).Count == 2)
+                            {
+                                // list.Add(i);
+                                Console.WriteLine(i);
+                            }
+                        }
+                    times--;
+                } 
+            }
+            private static List<int> FindFactors(int thevalue)
+            {
+                int mid = thevalue ;
                 List<int> list = new List<int>();
                 for (int i = 1; i <= mid; i++)
                 {
