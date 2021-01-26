@@ -11,6 +11,8 @@ namespace EntranceExam
         {
             //spoj prime generator
             //accept range
+
+
             public static void primeGenerator()
             {
                 // List<int> list = new List<int>();
@@ -35,8 +37,11 @@ namespace EntranceExam
             }
             private static List<int> FindFactors(int thevalue)
             {
-                int mid = thevalue ;
                 List<int> list = new List<int>();
+                if (thevalue < 2) return list;
+                if (thevalue % 2==0) return list;
+                int mid = thevalue ;
+               
                 for (int i = 1; i <= mid; i++)
                 {
                     if (thevalue % i == 0)
@@ -62,6 +67,19 @@ namespace EntranceExam
                 }
                 return counter;
             }
+
+            bool isPrime(int number)
+            {
+                if (number < 2) return false;
+                if (number == 2) return false;
+                if (number % 2 == 0) return false;
+                for (int i = 3; i * i < number; i+=2)
+                {
+                    if (number % i == 0) return false;
+                }
+                return true;
+            }
+
         }
     }
 }

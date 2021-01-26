@@ -84,17 +84,35 @@ namespace EntranceExam
             // Console.WriteLine(pr.countRepresentations(15));
             //SequenciallyBounded bounded = new SequenciallyBounded();
             //Console.WriteLine(bounded.isSequentiallyBounded(array));
-            
-            
-            
-            
-            
-            EntranceExam ee = new EntranceExam();
-            int[] ranArr = {1,2,22,5,5,5,5,57,8,8,9,588  };
-            PrimeNumbers pn = new PrimeNumbers();
 
-            Console.WriteLine(ee.isOnion(ranArr));
-           // Console.WriteLine(ee.isOnionArray(ranArr));
+
+
+
+
+            //EntranceExam ee = new EntranceExam();
+            //int[] ranArr = {1,2,22,5,5,5,5,57,8,8,9,588  };
+            //PrimeNumbers pn = new PrimeNumbers();
+
+            //Console.WriteLine(string.Join(", ",candies.distribute(12, 30)));
+            
+            SBANKS sBANKS = new SBANKS();
+            sBANKS.Convert();
+            ////int[] akk = { 2, -5, 0, 3, -1 };
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    if (akk[i] > 0)
+            //    {
+            //        akk[i] -= 1;
+            //    }
+            //    else
+            //    {
+            //        akk[i] = +2
+            //    }
+
+            //}
+            //Console.WriteLine(string.Join(",",akk));
+
+
         }
         //public int isMercurial(int[] a)
         //{
