@@ -2,8 +2,6 @@
 
 namespace EntranceExam
 {
-    partial class Program
-    {
         class Upcount
         {
 
@@ -32,4 +30,4 @@ namespace EntranceExam
             }
         }
     }
-}
+

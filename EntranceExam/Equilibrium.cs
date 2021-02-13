@@ -2,8 +2,7 @@
 
 namespace EntranceExam
 {
-    partial class Program
-    {
+
         class Equilibrium
         {
             int equilibrium(int[] ff)
@@ -33,4 +32,4 @@ namespace EntranceExam
             }
         }
     }
-}
+

@@ -5,8 +5,7 @@ using System.Collections.Generic;
 
 namespace EntranceExam
 {
-    partial class Program
-    {
+
        public class PrimeNumbers
         {
             //spoj prime generator
@@ -82,4 +81,4 @@ namespace EntranceExam
 
         }
     }
-}
+

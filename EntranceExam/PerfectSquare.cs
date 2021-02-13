@@ -2,8 +2,7 @@
 
 namespace EntranceExam
 {
-    partial class Program
-    {
+
         class PerfectSquare
         {
             // 5 2.14234 9 : 7 = 2.645345 9
@@ -17,4 +16,3 @@ namespace EntranceExam
             }
         }
     }
-}
