@@ -45,7 +45,7 @@ namespace EntranceExam
             int count = 0;
             int sequence = 0;
             if (!array.Contains(0)) return 0;
-            for (int i = 0; i < array.Length-1; i++)
+            for (int i = 0; i < array.Length - 1; i++)
             {
                 if (array[i] == 0)
                 {
@@ -74,7 +74,7 @@ namespace EntranceExam
 
             return count;
         }
-        public int  Stanton(int[] a)
+        public int Stanton(int[] a)
         {
             int measure = 0;
             var ones = a.Where(x => x == 1).Count();
@@ -90,7 +90,7 @@ namespace EntranceExam
         public int decodeArray(int[] array)
         {
             int final = 0;
-            for (int i = 0; i < array.Length-1; i++)
+            for (int i = 0; i < array.Length - 1; i++)
             {
                 int difference = array[i] - array[i + 1];
                 final = final * 10 + Math.Abs(difference);
@@ -124,15 +124,15 @@ namespace EntranceExam
                     break;
                 }
             }
-            if(array.Length == starter)
+            if (array.Length == starter)
             {
                 return 0;
             }
-            for (int i = starter; i < array.Length-starter; i++)
+            for (int i = starter; i < array.Length - starter; i++)
             {
                 if (array[i] == start)
                 {
-                        return 0;
+                    return 0;
                 }
             }
 
@@ -149,22 +149,22 @@ namespace EntranceExam
             {
                 return 0;
             }
-            if(array[0] == 0 || array[array.Length - 1] == 0)
+            if (array[0] == 0 || array[array.Length - 1] == 0)
             {
                 return 0;
             }
-            for (int i = 1; i < array.Length-1; i++)
+            for (int i = 1; i < array.Length - 1; i++)
             {
-                if(array[i] != 0)
+                if (array[i] != 0)
                 {
-                    if((array[i-1] == 0 && array[i+1]==0)|| (array[i - 1] != 0 && array[i + 1] != 0))
+                    if ((array[i - 1] == 0 && array[i + 1] == 0) || (array[i - 1] != 0 && array[i + 1] != 0))
                     {
                         return 0;
                     }
                 }
                 else
                 {
-                    if(!(array[i-1] !=0 && array[i + 1] != 0))
+                    if (!(array[i - 1] != 0 && array[i + 1] != 0))
                     {
                         return 0;
                     }
