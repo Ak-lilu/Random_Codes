@@ -4,9 +4,7 @@ using System.Text;
 
 namespace EntranceExam
 {
-    class DelegatesInAction
-    {
-    }
+ 
     public class PhotoFilters
     {
         public void Brightness(Photo photo)

@@ -13,8 +13,8 @@ namespace EntranceExam
     }
     public class DelegatingClass
     {
-        public delegate void Greet();
-        static Product product = new Product();
+        public delegate void Greet(string str);
+
        public List<Product> Items { get; set; } = new List<Product>();
         public void PopulateProduct()
         {
@@ -22,22 +22,22 @@ namespace EntranceExam
             Items.Add(new Product { Id = 2, Name = "Movies", Level = 2 });        
             Items.Add(new Product { Id = 3, Name = "Musics", Level = 5 });        
         }
-        
-        public void messageOne()
+        public void News(Greet greet) { Console.WriteLine("\" ? \""); }
+        public void messageOne(string s)
         {
             Thread.Sleep(1000);
-            Console.WriteLine($"this is message from 1st method");
+            Console.WriteLine($"this is message from 1st method {s}");
             
         }
-        public void message2()
+        public void message2(string s)
         {
             Thread.Sleep(2000);
-            Console.WriteLine($"this is message from 2nd method");
+            Console.WriteLine($"this is message from 2nd method {s}");
         }
-        public void message3()
+        public void message3(string s)
         {
             Thread.Sleep(3000);
-            Console.WriteLine($"this is message from 3rd method");
+            Console.WriteLine($"this is message from 3rd method {s}");
         }
     }
 }
