@@ -9,10 +9,9 @@ namespace EntranceExam
             int isPerfectSquare(int n)
             {
                 if (n < 0) return 0;
-                var init = Math.Sqrt(n);
-                var cast = (int)init;
-                cast++;
-                return cast * cast;
+                var init = (int)Math.Sqrt(n);
+                init++;
+                return init * init;
             }
         }
     }
