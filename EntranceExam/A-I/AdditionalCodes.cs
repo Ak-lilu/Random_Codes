@@ -202,7 +202,7 @@ namespace EntranceExam
             return depth;
         }
 
-        int mad(int[] a)
+        public static int isMadHav(int[] a)
         {
             int isMadhavArray = 0;
             int arrayLength = a.Length;
