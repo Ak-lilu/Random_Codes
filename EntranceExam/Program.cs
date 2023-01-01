@@ -1,4 +1,5 @@
-﻿using EntranceExam.L_P;
+﻿using EntranceExam.A_I;
+using EntranceExam.L_P;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,8 @@ namespace EntranceExam
       
         static void Main(string[] args)
         {
-            int[] sample = { 2,4,5,3,8,2,6,8};
-            int n = 1;
-            var calculatedLengthOfArray = n * (n + 1) / 2;
 
-            //OccurenceFrequency occurenceFrequency = new OccurenceFrequency();
-            //occurenceFrequency.ElementOccurenceCount(sample);
-            //EvenNumberUnder10UsingLinq();
+            Console.WriteLine(Stacked.IsStacked(19));
         }
 
         private static void EvenNumberUnder10UsingLinq()=>
